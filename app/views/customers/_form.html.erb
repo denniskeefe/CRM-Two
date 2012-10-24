@@ -1,0 +1,74 @@
+<%= form_for @customer, :html => {:multipart => true} do |f| %>
+  
+  <%= f.hidden_field :id %>
+  
+  <p>
+    <%= f.file_field :image %>
+  </p>
+  <p><%= f.submit "Upload" %></p>
+  <% end %>
+
+<%= form_for @customer, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name_first, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name_first, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name_last, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name_last, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name_company, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name_company, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :address_street, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :address_street, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :address_city, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :address_city, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :address_state, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :address_state, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :postal_code, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :postal_code, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :phone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :phone, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                customers_path, :class => 'btn' %>
+
+  </div>
+
+<% end %>
