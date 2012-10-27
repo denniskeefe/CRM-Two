@@ -31,6 +31,9 @@ gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'carrierwave'
+gem 'capybara'
+gem 'factory_girl_rails'
+gem 'shoulda-matchers'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
