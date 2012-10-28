@@ -3,10 +3,6 @@ class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.json
 
-  def create  
-     @customers = current_user.customer.build(:customer_id => params[:customer_id])  
-   end
-
   def index
     @customers = Customer.all
     
@@ -46,8 +42,7 @@ class CustomersController < ApplicationController
   # POST /customers
   # POST /customers.json
   def create
-    @customer = Customer.new(params[:customer])
-
+    @customer = current_user.customers.create(params[:customer])  
     respond_to do |format|
       if @customer.save
         format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
