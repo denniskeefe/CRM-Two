@@ -1,5 +1,5 @@
 require 'spec_helper'
 
 describe User do
-	it { has_many(:customers) }
+	it { should have_many(:customers) }
 end

@@ -11,6 +11,7 @@ class CreateCustomers < ActiveRecord::Migration
       t.string :address_state
       t.string :postal_code
       t.string :phone
+      t.integer :user_id
       t.integer :id
 
       t.timestamps
