@@ -54,38 +54,6 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
   end
 
-  # POST /customers
-  # POST /customers.json
-<<<<<<< HEAD
-  def create
-    @customer = Customer.new(params[:customer])  
-    
-    respond_to do |format|
-      if @customer.save
-        format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
-        format.json { render json: @customer, status: :created, location: @customer }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @customer.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-=======
-  # def create
-  #   @customer = Customer.new(params[:customer])
-
-  #   respond_to do |format|
-  #     if @customer.save
-  #       format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
-  #       format.json { render json: @customer, status: :created, location: @customer }
-  #     else
-  #       format.html { render action: "new" }
-  #       format.json { render json: @customer.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
->>>>>>> example
-
   # PUT /customers/1
   # PUT /customers/1.json
   def update
