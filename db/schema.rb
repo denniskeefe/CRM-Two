@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20121028162437) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.string   "image"
-    t.integer "user_id"
+    t.integer  "user_id"
   end
 
   add_index "customers", ["user_id"], :name => "index_customers_on_user_id"
