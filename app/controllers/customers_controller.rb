@@ -4,7 +4,9 @@ class CustomersController < ApplicationController
   # GET /customers.json
 
   def index
-    @customers = Customer.all
+    #instead of returning all customers we can filter by only showing 
+    #customers belonging to the current_user
+    @customers = current_user.customers
     
     respond_to do |format|
       format.html # index.html.erb
