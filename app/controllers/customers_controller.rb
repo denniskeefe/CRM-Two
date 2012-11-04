@@ -4,8 +4,17 @@ class CustomersController < ApplicationController
   # GET /customers.json
 
   def create  
-     @customers = current_user.customer.build(:customer_id => params[:customer_id])  
-   end
+    @customer = Customer.new(params[:customer])
+    @customer.user_id = current_user.id
+
+    if @customer.save
+      flash[:notice] = "Successfully created customer."
+        redirect_to(:action => 'index')
+    else
+      render('new')
+    end
+  end
+  
 
   def index
     #instead of returning all customers we can filter by only showing 
@@ -47,19 +56,19 @@ class CustomersController < ApplicationController
 
   # POST /customers
   # POST /customers.json
-  def create
-    @customer = Customer.new(params[:customer])
+  # def create
+  #   @customer = Customer.new(params[:customer])
 
-    respond_to do |format|
-      if @customer.save
-        format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
-        format.json { render json: @customer, status: :created, location: @customer }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @customer.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @customer.save
+  #       format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
+  #       format.json { render json: @customer, status: :created, location: @customer }
+  #     else
+  #       format.html { render action: "new" }
+  #       format.json { render json: @customer.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # PUT /customers/1
   # PUT /customers/1.json
