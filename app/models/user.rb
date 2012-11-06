@@ -10,5 +10,5 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :id
   # attr_accessible :title, :body
 
-  #mount_uploader :image, ImageUploader
+  
 end
