@@ -34,6 +34,7 @@ gem 'carrierwave'
 gem 'capybara'
 gem 'factory_girl_rails'
 gem 'shoulda-matchers'
+gem 'rmagick'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
